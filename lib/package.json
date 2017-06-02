@@ -2,5 +2,13 @@
   "name": "drone-publish",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "description": "Publish drone artifacts",
+  "repository": "https://github.com/b-connect/drone-publish",
+  "bin": {
+    "drone-publish": "./index.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
 }
