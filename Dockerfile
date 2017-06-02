@@ -5,5 +5,5 @@ COPY ./lib /root/lib
 WORKDIR /root/lib
 RUN npm -g install yarn
 RUN yarn install
-RUN yarn link
-CMD /usr/local/bin/drone-publish
+RUN npm link
+ENTRYPOINT drone-publish
