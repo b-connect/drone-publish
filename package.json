@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "execute-shell-promise": "^1.0.1",
-    "fs-extra": "^3.0.1"
-  }
-}
