@@ -1,0 +1,14 @@
+{
+  "name": "drone-publish",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Publish drone artifacts",
+  "repository": "https://github.com/b-connect/drone-publish",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "drone-node": "^1.0.1",
+    "execute-shell-promise": "^1.0.1",
+    "fs-extra": "^3.0.1"
+  }
+}
