@@ -6,3 +6,4 @@ WORKDIR /root/lib
 RUN npm -g install yarn
 RUN yarn install
 RUN npm link
+CMD ["drone-publish"]
