@@ -6,4 +6,4 @@ WORKDIR /root/lib
 RUN npm -g install yarn
 RUN yarn install
 RUN npm link
-ENTRYPOINT ["drone-publish"]
+ENTRYPOINT ["node", "/root/lib/index.js"]
