@@ -5,9 +5,6 @@
   "license": "MIT",
   "description": "Publish drone artifacts",
   "repository": "https://github.com/b-connect/drone-publish",
-  "bin": {
-    "drone-publish": "./index.js"
-  },
   "dependencies": {
     "commander": "^2.9.0",
     "drone-node": "^1.0.1",
