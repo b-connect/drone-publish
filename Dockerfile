@@ -1,8 +1,10 @@
-FROM bconnect/phing
+FROM alpine:latest
 
 RUN apk --update add nodejs nodejs-npm
-COPY ./lib /root/lib
+RUN   rm -rf \/var/cache/apk/*
+ADD ./index.js /root
+ADD ./package.json /root
 RUN npm -g install yarn
-WORKDIR /root/lib
+WORKDIR /root
 RUN yarn install
-ENTRYPOINT ["node", "/root/lib/index.js"]
+ENTRYPOINT ["node", "/root/index.js"]
