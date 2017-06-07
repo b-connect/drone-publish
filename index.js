@@ -15,6 +15,8 @@ let drone_commit_tag = process.env.DRONE_TAG;
 
 const workspace = process.env.DRONE_WORKSPACE;
 
+console.log(process.env);
+
 const execute = require('execute-shell-promise');
 
 if (process.env.PLUGIN_HUGO_ARCHTYPE) {
