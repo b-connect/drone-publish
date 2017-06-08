@@ -25,6 +25,7 @@ const build_doc_name = [build_docs_dir, env.DRONE_BUILD_NUMBER + '.md'].join('/'
 const project_index = [project_docs_dir, 'index.md'].join('/');
 const project_commit_index =  [project_docs_dir, 'index.md'].join('/');
 
+fs.ensureFileSync(project_index)
 let project = require('./lib/page')('project');
 project.addHeader('repository', env.DRONE_REPO_LINK);
 project.addHeader('categories', [env.DRONE_REPO_OWNER, env.DRONE_REPO_NAME, [env.DRONE_REPO_OWNER, env.DRONE_REPO_NAME].join('/')]);
@@ -32,8 +33,8 @@ project.addHeader('project', [[env.DRONE_REPO_OWNER, env.DRONE_REPO_NAME].join('
 project.addHeader('last_build_status', env.DRONE_PREV_BUILD_STATUS);
 project.addHeader('build_status', env.DRONE_BUILD_STATUS);
 project.addHeader('title',  [env.DRONE_REPO_OWNER, env.DRONE_REPO_NAME].join('/'));
-
 fs.writeFileSync(project_index, project.write())
+
 
 fs.ensureFileSync(build_doc_name)
 let build = require('./lib/page')('post');
