@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk --update add nodejs nodejs-npm 
+RUN apk --update add nodejs nodejs-npm  git
 RUN apk --update add gcc libgcc libstdc++ make expat expat-dev build-base g++ libc6-compat
 RUN apk --update add python 
 RUN node --version
