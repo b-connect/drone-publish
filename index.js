@@ -41,57 +41,6 @@ helper.writeComposerInfo(build)
     })
     .then((build) => {
         build.write(build_doc_name);
+        console.log('---- READY ----');
     })
-
-
-// try { 
-//     composer.init().then(() => {
-//         console.log('composer initialized');
-//         return composer.checkAllForUpdate();
-//     }).catch(() => {
-
-//     }).then(() => {
-//         var promise = new Promise((resolve, reject) => {
-//             build.addContent('# Module List')
-//             var packages = composer.getPackages().values();
-
-//             packages.forEach((v) => {
-//                 if (v.name.split('/').shift() !== 'drupal') {
-//                     return;
-//                 }
-//                 build.addContent('**' + v.name + '**');
-//                 build.addContent('Installed version:' + v.version);
-//                 v.releases.forEach((release,k) => {
-//                     let buildOutput = '- New version:' + release.version;
-//                     if (release.terms) {
-//                         let rTerms = [];
-//                         release.terms.forEach((terms) => {
-//                             terms.term.forEach((term) => {
-//                                 rTerms.push(term.value[0])
-//                             })
-//                         })
-//                         buildOutput += ' (' + rTerms.join(', ') + ')';
-//                     }
-//                     if (release.release_link) {
-//                         buildOutput += ' - [View](' + release.release_link[0] + ')';  
-//                     }
-//                     build.addContent(buildOutput);
-//                 })
-//             })
-//             build.addContentGroup('git', -200, true);
-//             var git = require('simple-git')( workspace );
-
-//         })
- 
-//         return promise;
-//     }).then(() => {
-//         console.log('READY');
-//     }).catch(() => {
-
-//     }).then(() => {
-//         build.write(build_doc_name);
-//     })
-// } catch (e) {
-//     console.log(e);
-// }
 
