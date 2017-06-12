@@ -17,6 +17,7 @@ const helper = require('./lib/helper')(env);
 console.log('Start publishing for hugo');
 
 workspace = env.DRONE_WORKSPACE;
+process.chdir(workspace);
 
 const project_docs_dir = [workspace, '.docs' , hugo_archtype , env.DRONE_REPO_OWNER, env.DRONE_REPO_NAME].join('/');
 const build_docs_dir = [workspace, '.docs' , 'post' , env.DRONE_REPO_OWNER, env.DRONE_REPO_NAME].join('/');
