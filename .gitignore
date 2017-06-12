@@ -60,4 +60,5 @@ typings/
 .docs
 lib/wiki
 
-composer.*
+composer.json
+composer.lock
