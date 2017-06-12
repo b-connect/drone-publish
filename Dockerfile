@@ -4,8 +4,14 @@ RUN apk --update add nodejs nodejs-npm  git
 RUN apk --update add gcc libgcc libstdc++ make expat expat-dev build-base g++ libc6-compat
 RUN apk --update add python 
 RUN node --version
+
 ADD ./index.js /root
-ADD ./lib /root/lib
+RUN mkdir /root/lib
+ADD ./lib/composer.js /root/lib/composer.js
+ADD ./lib/drupal.js /root/lib/drupal.js
+ADD ./lib/drupalversion.js /root/lib/drupalversion.js
+ADD ./lib/helper.js /root/lib/helper.js
+ADD ./lib/page.js /root/lib/page.js
 ADD ./package.json /root
 RUN npm -g install yarn
 WORKDIR /root
