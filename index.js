@@ -27,6 +27,7 @@ const project_commit_index =  [project_docs_dir, 'index.md'].join('/');
 
 let project = require('./lib/page')('project');
 project = helper.populatePage(project);
+console.log('Write index file for project');
 project.write(project_index);
 
 
@@ -42,5 +43,6 @@ helper.writeComposerInfo(build)
     .then((build) => {
         build.write(build_doc_name);
         console.log('---- READY ----');
+        process.exit(0);
     })
 
