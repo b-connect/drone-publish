@@ -24,6 +24,7 @@ const build_doc_name = [build_docs_dir, env.DRONE_BUILD_NUMBER + '.md'].join('/'
 const project_index = [project_docs_dir, 'index.md'].join('/');
 const project_commit_index =  [project_docs_dir, 'index.md'].join('/');
 
+console.log('Working on dir ' + workspace);
 
 let project = require('./lib/page')('project');
 project = helper.populatePage(project);
