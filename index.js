@@ -14,18 +14,15 @@ for ( a in process.env ) {
 
 const helper = require('./lib/helper')(env);
 
-console.log('Start publishing for hugo');
-
 workspace = env.DRONE_WORKSPACE;
 process.chdir(workspace);
+console.log('Start publishing for hugo', process.cwd());
 
 const project_docs_dir = [workspace, '.docs' , hugo_archtype , env.DRONE_REPO_OWNER, env.DRONE_REPO_NAME].join('/');
 const build_docs_dir = [workspace, '.docs' , 'post' , env.DRONE_REPO_OWNER, env.DRONE_REPO_NAME].join('/');
 const build_doc_name = [build_docs_dir, env.DRONE_BUILD_NUMBER + '.md'].join('/');
 const project_index = [project_docs_dir, 'index.md'].join('/');
 const project_commit_index =  [project_docs_dir, 'index.md'].join('/');
-
-console.log('Working on dir ' + workspace);
 
 let project = require('./lib/page')('project');
 project = helper.populatePage(project);
@@ -40,6 +37,7 @@ build.addContentGroup('composer', -100, true);
 helper.writeComposerInfo(build)
     .then((build) => {
         build.addContentGroup('git', -200, true);
+        console.log('Git check');
         return helper.writeGitLog(build);
     })
     .then((build) => {
